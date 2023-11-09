@@ -23,7 +23,7 @@ $ npm install -g live-server
 1. Switch to the project directory.
 
 ```bash
-$ cd inventec-3d-viewer
+$ cd ThreeJS_3D-Viewer
 ```
 
 2. Start the 3D viewer with live-server.
