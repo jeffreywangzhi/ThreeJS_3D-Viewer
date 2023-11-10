@@ -12,7 +12,7 @@ A real-time 3D viewer built with three.js and lidar sensors, rendering staff loc
 
 ## Prerequisites <a name = "prerequisites"></a> ##
 
-* Install live-server in command line:
+* Install **live-server** in command line:
 
 ```bash
 $ npm install -g live-server
@@ -26,7 +26,7 @@ $ npm install -g live-server
 $ cd ThreeJS_3D-Viewer
 ```
 
-2. Start the 3D viewer with live-server.
+2. Start the 3D viewer with **live-server**.
 
 ```bash
 $ live-server
