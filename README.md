@@ -1,6 +1,6 @@
 # ThreeJS_3D-Viewer
 
-A real-time 3D viewer built with three.js and lidar sensors, rendering staff locations within a warehouse to improve management.
+A real-time 3D viewer, built with three.js, ROS websocket, and lidar sensors, renders staff locations in a warehouse to improve management.
 
 ![demo.png](demo.png)
 
