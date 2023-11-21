@@ -2,6 +2,22 @@ import * as THREE from 'three';
 import { OrbitControls } from 'OrbitControls';
 import { OBJLoader } from 'OBJLoader';
 // import { PLYLoader } from 'PLYLoader';
+
+// // set roslib websocket
+// const ros = new ROSLIB.Ros({
+// 	url: 'ws://127.0.0.1:9090'
+// });
+// // set websocket listener
+// const listener = new ROSLIB.Topic({
+//     ros: ros,
+//     name: '/object3d_detector/poses',
+//     messageType: 'geometry_msgs/PoseArray'
+// });
+// // websocket subscribe topic
+// listener.subscribe((message) => {
+// 	LoadObjectLocation(message.poses, message.poses.length)
+// });
+
 // create scene and camera
 const scene = new THREE.Scene();
 const camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000 );
@@ -19,7 +35,7 @@ scene.add(hlight);
 var controls = new OrbitControls(camera,renderer.domElement);
 
 var fileNo = 0;
-// load ply
+// // load ply
 // const loader = new PLYLoader();
 // loader.load('model.ply', (ply) => {
 // 	// move model to center
@@ -27,10 +43,18 @@ var fileNo = 0;
 // 	// process model appearance
 // 	const material = new THREE.PointsMaterial( {size: 0.0001, vertexColors: true, transparent: true, opacity: 0.3 } );
 // 	const object = new THREE.Points( ply, material );
+// 	// transformation matrix
+// 	const matrix = new THREE.Matrix4()
+// 	matrix.set(
+// 		0.819,	0.891,	0.069,	5.521,
+// 		-0.593,	0.621,	0,	0,
+// 		0.248,	0,	1.2,	0,
+// 		0.000,	0.000,	0.000,	1.000);
+// 	object.applyMatrix4(matrix);
 // 	// scale
 // 	object.scale.set(5,5,5);
 // 	scene.add( object );
-// 	// keep updating object location from sample data
+// 	// [sample dataset] keep updating object location
 // 	var interval = setInterval(function() {
 // 		var formattedNumber = String(fileNo).padStart(6, '0');
 // 		// call loadCoordinate function with parameters
@@ -70,7 +94,7 @@ loader.load('Warehouse.obj', (obj) => {
 	animate();
 });
 
-// load sample data
+// [sample dataset] load sample data
 function loadCoordinateData(file) {
 	var dataArray = [];
 	readTextFile(file, dataArray)
@@ -81,7 +105,7 @@ function loadCoordinateData(file) {
     });
 }
 
-// read sample data file
+// [sample dataset] read sample data file
 function readTextFile(file, dataArray) {
 	return fetch(file)
     	.then(response => {
