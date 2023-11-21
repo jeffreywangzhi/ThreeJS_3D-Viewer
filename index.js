@@ -78,8 +78,10 @@ loader.load('Warehouse.obj', (obj) => {
     	  }
     	}
   	});
+	// create model material
   	var material = new THREE.MeshBasicMaterial({ color: 0x272727, transparent: true, opacity: 0.7 });
   	obj.children[0].material = material;
+	// scale model
 	obj.scale.set(10,10,10);
   	scene.add(obj);
 	// keep updating object location from sample data
