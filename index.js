@@ -84,7 +84,7 @@ loader.load('Warehouse.obj', (obj) => {
 	// scale model
 	obj.scale.set(10,10,10);
   	scene.add(obj);
-	// keep updating object location from sample data
+	// [sample dataset] keep updating object location
 	var interval = setInterval(function() {
 		var formattedNumber = String(fileNo).padStart(6, '0');
 		// call loadCoordinate function with parameters
@@ -135,7 +135,8 @@ function readTextFile(file, dataArray) {
 function LoadObjectLocation(dataArray, count){
 	for(let i = 0; i < count ; i++){
 		console.log("item "+i+" = "+ dataArray[i]);
-		createObject(dataArray[i]);
+		createObject(dataArray[i]); // sample-dataset
+		// createObject(dataArray[i].position); // websocket
 	}
 }
 
@@ -147,7 +148,8 @@ function createObject(itemArray){
 	const geometryItem = new THREE.SphereGeometry(2, 64, 32);
 	const materialItem = new THREE.MeshBasicMaterial( { color: 0x00ff00 } );
 	const cubeItem = new THREE.Mesh( geometryItem, materialItem );
-	cubeItem.position.set(itemArray[0], itemArray[1], itemArray[2]);
+	// cubeItem.position.set(itemArray.x, itemArray.y, itemArray.z); // websocket
+	cubeItem.position.set(itemArray[0], itemArray[1], itemArray[2]); // sample-dataset
 	scene.add(cubeItem);
 	setTimeout(() => {
 		scene.remove(cubeItem); // Remove the object from the scene
