@@ -82,16 +82,16 @@ loader.load('Warehouse.obj', (obj) => {
   	var material = new THREE.MeshBasicMaterial({ color: 0x272727, transparent: true, opacity: 0.7 });
   	obj.children[0].material = material;
 	// scale model
-	obj.scale.set(10,10,10);
+	obj.scale.set(4,4,4);
   	scene.add(obj);
 	// [sample dataset] keep updating object location
 	var interval = setInterval(function() {
 		var formattedNumber = String(fileNo).padStart(6, '0');
 		// call loadCoordinate function with parameters
-		loadCoordinateData('/dataset/'+formattedNumber+'.txt');
+		loadCoordinateData('/sample-dataset/'+formattedNumber+'.txt');
 		// move to the next sample data file
 		fileNo += 1;
-		if (fileNo == 107) clearInterval(interval);
+		if (fileNo == 1806) clearInterval(interval);
 	}, 100);
 	animate();
 });
