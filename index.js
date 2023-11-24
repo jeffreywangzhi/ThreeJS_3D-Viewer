@@ -148,8 +148,8 @@ function createObject(itemArray){
 	const geometryItem = new THREE.SphereGeometry(2, 64, 32);
 	const materialItem = new THREE.MeshBasicMaterial( { color: 0x00ff00 } );
 	const cubeItem = new THREE.Mesh( geometryItem, materialItem );
-	// cubeItem.position.set(itemArray.x, itemArray.y, itemArray.z); // websocket
 	cubeItem.position.set(itemArray[0], itemArray[1], itemArray[2]); // sample-dataset
+	// cubeItem.position.set(itemArray.x, itemArray.y, itemArray.z); // websocket
 	scene.add(cubeItem);
 	setTimeout(() => {
 		scene.remove(cubeItem); // Remove the object from the scene
