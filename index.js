@@ -3,20 +3,53 @@ import { OrbitControls } from 'OrbitControls';
 import { OBJLoader } from 'OBJLoader';
 // import { PLYLoader } from 'PLYLoader';
 
-// // set roslib websocket
-// const ros = new ROSLIB.Ros({
-// 	url: 'ws://127.0.0.1:9090'
-// });
-// // set websocket listener
-// const listener = new ROSLIB.Topic({
-//     ros: ros,
-//     name: '/object3d_detector/poses',
-//     messageType: 'geometry_msgs/PoseArray'
-// });
-// // websocket subscribe topic
-// listener.subscribe((message) => {
-// 	LoadObjectLocation(message.poses, message.poses.length)
-// });
+// add event listener for websocket connect button
+document.querySelector('#connect').addEventListener('click', processIP);
+// [websocket connection]
+function processIP() {
+//     // get user input value
+//     var inputString = document.getElementById('inputString').value;
+// 	// connect to ros websocket
+// 	try{
+// 		const ros = new ROSLIB.Ros({
+// 			url: `ws://${inputString}`
+// 		});
+// 		ros.on('connection', function () {
+// 			alert('Connected to ROS server: ws://' + inputString);
+// 			console.log('Connected to ROS server: ws://' + inputString);
+			document.getElementById('overlay').style.display = 'none';
+// 			document.getElementById('inputString').value = ''
+// 			// start real-time rendering
+// 			subscribeROS(ros);
+// 		});
+// 		ros.on('error', function (error) {
+// 			alert('Error connecting to ROS server: ws://' + inputString);
+// 			console.error('Error connecting to ROS server:');
+// 			document.getElementById('overlay').style.display = 'flex';
+// 			document.getElementById('inputString').value = ''
+// 		});
+// 	}
+// 	catch {
+// 		alert('Error connecting to ROS server: ws://' + inputString);
+// 		console.error('Error connecting to ROS server: ws://' + inputString);
+// 		document.getElementById('overlay').style.display = 'flex';
+// 		document.getElementById('inputString').value = ''
+// 	}
+}
+// // subscribe websocket data streaming
+// function subscribeROS(ros) {
+// 	// set websocket listener
+// 	const listener = new ROSLIB.Topic({
+// 		ros: ros,
+// 		name: '/object3d_detector/poses',
+// 		messageType: 'geometry_msgs/PoseArray'
+// 	});
+// 	// websocket subscribe topic
+// 	listener.subscribe((message) => {
+// 		// load real-time locations
+// 		LoadObjectLocation(message.poses, message.poses.length)
+// 	});
+// }
 
 // create scene and camera
 const scene = new THREE.Scene();
