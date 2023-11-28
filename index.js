@@ -194,6 +194,8 @@ function animate() {
 	requestAnimationFrame( animate );
 	// set background color
 	renderer.setClearColor(0x000000, 1);
+	// display camera position
+	// document.getElementById('cameraPosition').innerText = `Camera Position: ${camera.position.x.toFixed(2)}, ${camera.position.y.toFixed(2)}, ${camera.position.z.toFixed(2)}`;
 	renderer.render( scene, camera );
 }
 
