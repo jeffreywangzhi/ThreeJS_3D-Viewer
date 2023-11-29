@@ -74,7 +74,7 @@ var fileNo = 0;
 // 	// move model to center
 // 	ply.center();
 // 	// process model appearance
-// 	const material = new THREE.PointsMaterial( {size: 0.0001, vertexColors: true, transparent: true, opacity: 0.3 } );
+// 	const material = new THREE.PointsMaterial( {size: 0.09, vertexColors: true, transparent: true, opacity: 0.4 } );
 // 	const object = new THREE.Points( ply, material );
 // 	// transformation matrix
 // 	const matrix = new THREE.Matrix4()
@@ -91,10 +91,10 @@ var fileNo = 0;
 // 	var interval = setInterval(function() {
 // 		var formattedNumber = String(fileNo).padStart(6, '0');
 // 		// call loadCoordinate function with parameters
-// 		loadCoordinateData('/dataset/'+formattedNumber+'.txt');
+// 		loadCoordinateData('/sample-dataset/'+formattedNumber+'.txt');
 // 		// move to the next sample data file
 // 		fileNo += 1;
-// 		if (fileNo == 107) clearInterval(interval);
+// 		if (fileNo == 1806) clearInterval(interval);
 // 	}, 100);
 // 	animate();
 // });
