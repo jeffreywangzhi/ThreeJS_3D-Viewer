@@ -2,7 +2,7 @@
 
 A real-time 3D viewer, built with three.js, ROS websocket, and lidar sensors, renders staff locations in a warehouse to improve management.
 
-![demo.png](demo.png)
+![demo.png](src/demo.png)
 
 ## Table of Contents ##
 
