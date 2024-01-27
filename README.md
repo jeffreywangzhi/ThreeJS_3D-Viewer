@@ -32,5 +32,11 @@ $ cd ThreeJS_3D-Viewer
 $ live-server
 ```
 
+[optional] 3. Start the 3D viewer with **node.js**.
+
+```bash
+$ node server.js
+```
+
 ## Who do I talk to <a name = "author"></a> ##
 * Jeffrey Wang (jeffreywangzhi@gmail.com)
